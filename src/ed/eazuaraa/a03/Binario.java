@@ -9,7 +9,7 @@ package ed.eazuaraa.a03;
  *
  * @author eazuara
  */
-public class Binario extends FetchClass {
+public class Binario extends FetchClass implements Ordenamientos {
 
     @Override
     int Fetch(int num) {
@@ -40,7 +40,28 @@ public class Binario extends FetchClass {
    
     return -1;
  }
+
+    @Override
+    public void ordenar() {
+        int m,temp;
+        for(int i=0; i<vector.length;i++){
+            m=i;
+            for(int j=i+1;j<vector.length;j++){
+                if(vector[j]<vector[m]){
+                    m=j;
+                }
+            }
+            if(i != m){
+            temp=vector[i];
+            vector[i]=vector[m];
+            vector[m]=temp;
+        }
+    }
+    }
 }
+
+
+
     
     
     
